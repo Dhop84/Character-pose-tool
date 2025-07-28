@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NSFW Character Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
+    h1 { color: #ff4081; }
+    .section { margin-bottom: 20px; }
+    button { background: #ff4081; color: white; padding: 10px; border: none; cursor: pointer; }
+    .output { font-family: monospace; white-space: pre-wrap; background: #222; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>NSFW Character Generator</h1>
+
+  <div class="section">
+    <label for="bodyType">Body Type:</label>
+    <select id="bodyType">
+      <option>Curvy</option>
+      <option>Petite</option>
+      <option>Athletic</option>
+      <option>Voluptuous</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <label for="hairStyle">Hair Style:</label>
+    <select id="hairStyle">
+      <option>Messy bun</option>
+      <option>Long and straight</option>
+      <option>Pixie cut</option>
+      <option>Wavy bob</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <label for="pose">Pose:</label>
+    <select id="pose">
+      <option>Reclining provocatively</option>
+      <option>Standing with attitude</option>
+      <option>Crouched and ready</option>
+      <option>Sitting coyly</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <button onclick="generate()">Generate Prompt</button>
+  </div>
+
+  <div class="output" id="outputBox"></div>
+
+  <script>
+    function generate() {
+      const body = document.getElementById('bodyType').value;
+      const hair = document.getElementById('hairStyle').value;
+      const pose = document.getElementById('pose').value;
+
+      const prompt = `A ${body}-bodied character with ${hair} hair, ${pose}.`;
+      document.getElementById('outputBox').textContent = prompt;
+    }
+  </script>
+</body>
+</html>
