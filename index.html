@@ -8,100 +8,105 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <h1>NSFW Character Generator</h1>
-    <p class="subhead">Design clean, modern character prompts with style and precision.</p>
+  <main class="wrapper">
+    <header class="header">
+      <h1>NSFW Character Generator</h1>
+      <p>Create elegant and expressive character prompts</p>
+    </header>
 
-    <div class="card">
-      <label for="bodyType">Body Type</label>
-      <select id="bodyType">
-        <option>Curvy</option>
-        <option>Petite</option>
-        <option>Athletic</option>
-        <option>Voluptuous</option>
-      </select>
-
-      <label for="hairStyle">Hair Style</label>
-      <select id="hairStyle">
-        <option>Messy bun</option>
-        <option>Long and straight</option>
-        <option>Pixie cut</option>
-        <option>Wavy bob</option>
-      </select>
-
-      <label for="pose">Pose</label>
-      <select id="pose">
-        <option>Reclining provocatively</option>
-        <option>Standing with attitude</option>
-        <option>Crouched and ready</option>
-        <option>Sitting coyly</option>
-      </select>
-
-      <label for="skinTone">Skin Tone</label>
-      <select id="skinTone">
-        <option>Fair</option>
-        <option>Tan</option>
-        <option>Bronze</option>
-        <option>Ebony</option>
-        <option>Grey-scale</option>
-      </select>
-
-      <label for="clothing">Clothing Style</label>
-      <select id="clothing">
-        <option>Sheer cyberpunk lingerie</option>
-        <option>Latex bodysuit</option>
-        <option>Gothic corset</option>
-        <option>Futuristic armor</option>
-      </select>
-
-      <label for="accessories">Accessories</label>
-      <select id="accessories">
-        <option>Cyber visor</option>
-        <option>Neon earrings</option>
-        <option>Choker</option>
-        <option>Nano tattoos</option>
-      </select>
-
-      <label for="expression">Expression</label>
-      <select id="expression">
-        <option>Mysterious</option>
-        <option>Playful</option>
-        <option>Confident</option>
-        <option>Seductive</option>
-      </select>
-
-      <label for="lighting">Lighting Style</label>
-      <select id="lighting">
-        <option>Cinematic</option>
-        <option>Neon rim-lit</option>
-        <option>Warm spotlight</option>
-        <option>Rainy alley glow</option>
-      </select>
-
-      <label><input type="checkbox" id="furryToggle" onchange="toggleSpecies()"> Enable furry character traits</label>
-
-      <div id="speciesSection" style="display:none;">
-        <label for="furrySpecies">Furry Species</label>
-        <select id="furrySpecies">
-          <option>Tiger 🐅</option>
-          <option>Fox 🦊</option>
-          <option>Snow Leopard ❄️🐆</option>
-          <option>Squirrel 🐿️</option>
-          <option>Bear 🐻</option>
-          <option>Lion 🦁</option>
+    <section class="form-grid">
+      <div class="card">
+        <label for="bodyType">Body Type</label>
+        <select id="bodyType">
+          <option>Curvy</option><option>Petite</option>
+          <option>Athletic</option><option>Voluptuous</option>
         </select>
       </div>
 
-      <button onclick="generatePrompt()">Generate Character</button>
-    </div>
+      <div class="card">
+        <label for="hairStyle">Hair Style</label>
+        <select id="hairStyle">
+          <option>Messy bun</option><option>Long and straight</option>
+          <option>Pixie cut</option><option>Wavy bob</option>
+        </select>
+      </div>
 
-    <div class="output" id="outputBox"></div>
-  </div>
+      <div class="card">
+        <label for="pose">Pose</label>
+        <select id="pose">
+          <option>Reclining provocatively</option><option>Standing with attitude</option>
+          <option>Crouched and ready</option><option>Sitting coyly</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label for="skinTone">Skin Tone</label>
+        <select id="skinTone">
+          <option>Fair</option><option>Tan</option><option>Bronze</option>
+          <option>Ebony</option><option>Grey-scale</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label for="clothing">Clothing Style</label>
+        <select id="clothing">
+          <option>Sheer cyberpunk lingerie</option><option>Latex bodysuit</option>
+          <option>Gothic corset</option><option>Futuristic armor</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label for="accessories">Accessories</label>
+        <select id="accessories">
+          <option>Cyber visor</option><option>Neon earrings</option>
+          <option>Choker</option><option>Nano tattoos</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label for="expression">Expression</label>
+        <select id="expression">
+          <option>Mysterious</option><option>Playful</option>
+          <option>Confident</option><option>Seductive</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label for="lighting">Lighting Style</label>
+        <select id="lighting">
+          <option>Cinematic</option><option>Neon rim-lit</option>
+          <option>Warm spotlight</option><option>Rainy alley glow</option>
+        </select>
+      </div>
+
+      <div class="card toggle-card">
+        <label><input type="checkbox" id="furryToggle" onchange="toggleSpecies()" />
+        Enable furry character traits</label>
+      </div>
+
+      <div class="card species-card" id="speciesSection" style="display: none;">
+        <label for="furrySpecies">Furry Species</label>
+        <select id="furrySpecies">
+          <option>Tiger 🐅</option><option>Fox 🦊</option>
+          <option>Snow Leopard ❄️🐆</option><option>Squirrel 🐿️</option>
+          <option>Bear 🐻</option><option>Lion 🦁</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button onclick="generatePrompt()">Generate Character</button>
+    </section>
+
+    <section class="output-wrapper">
+      <div class="output" id="outputBox"></div>
+    </section>
+  </main>
 
   <script>
     function toggleSpecies() {
-      document.getElementById('speciesSection').style.display =
-        document.getElementById('furryToggle').checked ? 'block' : 'none';
+      const speciesBox = document.getElementById('speciesSection');
+      speciesBox.style.display = document.getElementById('furryToggle').checked ? 'block' : 'none';
     }
 
     function generatePrompt() {
@@ -116,13 +121,11 @@
       const furry = document.getElementById('furryToggle').checked;
       const species = document.getElementById('furrySpecies').value;
 
-      let prompt = `NSFW female character. ${body} build, ${hair} hair in a ${pose} pose. Skin tone: ${skin}. Wears ${clothing}, accessorized with ${accessories}. Expression: ${expression}, lighting: ${lighting}.`;
-
+      let output = `NSFW female character. ${body} build, ${hair} hair in a ${pose} pose. Skin tone: ${skin}. Wears ${clothing}, accessorized with ${accessories}. Expression: ${expression}, lighting: ${lighting}.`;
       if (furry) {
-        prompt += ` Anthropomorphic traits present — species: ${species}.`;
+        output += ` Anthropomorphic traits present — species: ${species}.`;
       }
-
-      document.getElementById('outputBox').textContent = prompt;
+      document.getElementById('outputBox').textContent = output;
     }
   </script>
 </body>
