@@ -3,62 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <title>NSFW Character Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; background: #111; color: #eee; padding: 20px; }
-    h1 { color: #ff4081; }
-    .section { margin-bottom: 20px; }
-    button { background: #ff4081; color: white; padding: 10px; border: none; cursor: pointer; }
-    .output { font-family: monospace; white-space: pre-wrap; background: #222; padding: 10px; border-radius: 5px; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #0e0e1c, #1a1a2e);
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1 {
+      margin-top: 30px;
+      font-size: 2.4em;
+      background: linear-gradient(to right, #ff0080, #7928ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card {
+      background-color: #222;
+      border: 2px solid #444;
+      border-radius: 12px;
+      box-shadow: 0 0 8px #ff0080aa;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    .section {
+      margin-bottom: 16px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 4px;
+    }
+    select, input[type="checkbox"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 48px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(to right, #ff0080, #7928ca);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      min-height: 48px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #speciesSection {
+      display: none;
+    }
+    .output {
+      background-color: #111;
+      border: 1px solid #666;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      font-size: 0.95em;
+    }
+
+    @media only screen and (max-width: 480px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.8em; margin-top: 20px; text-align: center; }
+      .card { width: 100%; padding: 15px; }
+      select, input[type="checkbox"] { font-size: 0.95em; padding: 6px; }
+      button { width: 100%; font-size: 1em; }
+      .output { font-size: 0.9em; padding: 10px; }
+    }
   </style>
 </head>
 <body>
   <h1>NSFW Character Generator</h1>
-
-  <div class="section">
-    <label for="bodyType">Body Type:</label>
-    <select id="bodyType">
-      <option>Curvy</option>
-      <option>Petite</option>
-      <option>Athletic</option>
-      <option>Voluptuous</option>
-    </select>
+  <div class="card">
+    <div class="section"><label for="bodyType">Body Type</label><select id="bodyType">
+      <option>Curvy</option><option>Petite</option><option>Athletic</option><option>Voluptuous</option>
+    </select></div>
+    <div class="section"><label for="hairStyle">Hair Style</label><select id="hairStyle">
+      <option>Messy bun</option><option>Long and straight</option><option>Pixie cut</option><option>Wavy bob</option>
+    </select></div>
+    <div class="section"><label for="pose">Pose</label><select id="pose">
+      <option>Reclining provocatively</option><option>Standing with attitude</option><option>Crouched and ready</option><option>Sitting coyly</option>
+    </select></div>
+    <div class="section"><label for="skinTone">Skin Tone</label><select id="skinTone">
+      <option>Fair</option><option>Tan</option><option>Bronze</option><option>Ebony</option><option>Grey-scale</option>
+    </select></div>
+    <div class="section"><label for="clothing">Clothing Style</label><select id="clothing">
+      <option>Sheer cyberpunk lingerie</option><option>Latex bodysuit</option><option>Gothic corset</option><option>Futuristic armor</option>
+    </select></div>
+    <div class="section"><label for="accessories">Accessories</label><select id="accessories">
+      <option>Cyber visor</option><option>Neon earrings</option><option>Choker</option><option>Nano tattoos</option>
+    </select></div>
+    <div class="section"><label for="expression">Expression</label><select id="expression">
+      <option>Mysterious</option><option>Playful</option><option>Confident</option><option>Seductive</option>
+    </select></div>
+    <div class="section"><label for="lighting">Lighting Style</label><select id="lighting">
+      <option>Cinematic</option><option>Neon rim-lit</option><option>Warm spotlight</option><option>Rainy alley glow</option>
+    </select></div>
+    <div class="section">
+      <label><input type="checkbox" id="furryToggle" onchange="toggleSpecies()"> Enable furry character traits</label>
+    </div>
+    <div class="section" id="speciesSection">
+      <label for="furrySpecies">Furry Species</label>
+      <select id="furrySpecies">
+        <option>Tiger 🐅</option><option>Fox 🦊</option><option>Snow Leopard ❄️🐆</option><option>Squirrel 🐿️</option><option>Bear 🐻</option><option>Lion 🦁</option>
+      </select>
+    </div>
+    <button onclick="generate()">Generate Character</button>
+    <div class="output" id="result"></div>
   </div>
-
-  <div class="section">
-    <label for="hairStyle">Hair Style:</label>
-    <select id="hairStyle">
-      <option>Messy bun</option>
-      <option>Long and straight</option>
-      <option>Pixie cut</option>
-      <option>Wavy bob</option>
-    </select>
-  </div>
-
-  <div class="section">
-    <label for="pose">Pose:</label>
-    <select id="pose">
-      <option>Reclining provocatively</option>
-      <option>Standing with attitude</option>
-      <option>Crouched and ready</option>
-      <option>Sitting coyly</option>
-    </select>
-  </div>
-
-  <div class="section">
-    <button onclick="generate()">Generate Prompt</button>
-  </div>
-
-  <div class="output" id="outputBox"></div>
 
   <script>
+    function toggleSpecies() {
+      const speciesSection = document.getElementById('speciesSection');
+      speciesSection.style.display = document.getElementById('furryToggle').checked ? 'block' : 'none';
+    }
+
+    function vibrateButton() {
+      if ('vibrate' in navigator) navigator.vibrate(30);
+    }
+
     function generate() {
+      vibrateButton();
       const body = document.getElementById('bodyType').value;
       const hair = document.getElementById('hairStyle').value;
       const pose = document.getElementById('pose').value;
+      const tone = document.getElementById('skinTone').value;
+      const clothes = document.getElementById('clothing').value;
+      const accessories = document.getElementById('accessories').value;
+      const expression = document.getElementById('expression').value;
+      const lighting = document.getElementById('lighting').value;
+      const isFurry = document.getElementById('furryToggle').checked;
+      const species = document.getElementById('furrySpecies').value;
 
-      const prompt = `A ${body}-bodied character with ${hair} hair, ${pose}.`;
-      document.getElementById('outputBox').textContent = prompt;
+      let prompt = `NSFW cyberpunk character — ${body} body, ${hair} hair, ${pose}, ${tone} skin tone, wearing ${clothes}, accessorized with ${accessories}. Expression: ${expression}, lighting: ${lighting}.`;
+      if (isFurry) {
+        prompt += ` Anthropomorphic traits: ${species}.`;
+      }
+
+      document.getElementById('result').innerText = prompt;
     }
+
+    // Swipe detection
+    let touchStartX = 0;
+    document.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+    document.addEventListener('touchend', e => {
+      let touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 50) document.body.style.background = "#111"; // dark theme
+      else if (touchEndX > touchStartX + 50) document.body.style.background = "#eee"; // light theme
+    });
   </script>
 </body>
 </html>
