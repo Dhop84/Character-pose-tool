@@ -1,47 +1,56 @@
-/* Base */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f9f9f9;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #e8edf2, #d0d5dd);
   color: #333;
 }
 
-/* Layout wrapper */
 .wrapper {
   max-width: 960px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* Header */
 .header {
   text-align: center;
   margin-bottom: 2em;
 }
+
 .header h1 {
   font-weight: 600;
   font-size: 2em;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.3em;
 }
+
 .header p {
   color: #777;
   font-size: 1em;
 }
 
-/* Form grid */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
   margin-bottom: 2em;
+  padding: 0 1em;
 }
 
-/* Cards */
 .card {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ✨ Expand animation on click */
+.card.active {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .card label {
@@ -51,17 +60,17 @@ body {
   font-size: 0.95em;
 }
 
-.card select,
-.card input[type="checkbox"] {
+select,
+input[type="checkbox"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 1em;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: #f2f2f2;
+  border: 1px solid #ccd0d5;
+  background-color: #f3f5f7;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-/* Toggle switch card */
 .toggle-card {
   display: flex;
   align-items: center;
@@ -72,7 +81,6 @@ body {
   font-weight: 500;
 }
 
-/* Actions */
 .actions {
   text-align: center;
   margin-bottom: 2em;
@@ -93,7 +101,6 @@ body {
   background-color: #c0c0c0;
 }
 
-/* Output */
 .output-wrapper {
   max-width: 800px;
   margin: auto;
@@ -103,24 +110,4 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  font-family: monospace;
-  white-space: pre-wrap;
-  font-size: 0.95em;
-  line-height: 1.5;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .wrapper {
-    padding: 20px 15px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .actions button {
-    width: 100%;
-  }
-}
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Ronnie434/30-days-of-React/tree/22142106cb46f717a1259f84227cc90ed7fe50cc/02_Day_Introduction_to_React%2F02_introduction_to_react.md?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")
