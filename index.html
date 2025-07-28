@@ -18,16 +18,14 @@
       <div class="card">
         <label for="bodyType">Body Type</label>
         <select id="bodyType">
-          <option>Curvy</option><option>Petite</option>
-          <option>Athletic</option><option>Voluptuous</option>
+          <option>Curvy</option><option>Petite</option><option>Athletic</option><option>Voluptuous</option>
         </select>
       </div>
 
       <div class="card">
         <label for="hairStyle">Hair Style</label>
         <select id="hairStyle">
-          <option>Messy bun</option><option>Long and straight</option>
-          <option>Pixie cut</option><option>Wavy bob</option>
+          <option>Messy bun</option><option>Long and straight</option><option>Pixie cut</option><option>Wavy bob</option>
         </select>
       </div>
 
@@ -127,6 +125,15 @@
       }
       document.getElementById('outputBox').textContent = output;
     }
+
+    // 🔄 Add click animation to cards
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
