@@ -1,78 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Character Creator</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>AI Image Creator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="creator-container">
-    
-    <!-- Character Identity Grid -->
-    <section class="identity-section">
-      <h2>Choose Your Character</h2>
-      <div class="avatar-grid">
-        <div class="avatar" data-category="woman">
-          <img src="avatars/woman.png" alt="Woman" />
-          <label>Woman</label>
-        </div>
-        <div class="avatar" data-category="man">
-          <img src="avatars/man.png" alt="Man" />
-          <label>Man</label>
-        </div>
-        <div class="avatar" data-category="nonbinary">
-          <img src="avatars/nonbinary.png" alt="Nonbinary" />
-          <label>Nonbinary</label>
-        </div>
-        <div class="avatar" data-category="furry-male">
-          <img src="avatars/furry-male.png" alt="Furry Male" />
-          <label>Furry♂️</label>
-        </div>
-        <div class="avatar" data-category="furry-female">
-          <img src="avatars/furry-female.png" alt="Furry Female" />
-          <label>Furry♀️</label>
-        </div>
-        <div class="avatar" data-category="furry-nonbinary">
-          <img src="avatars/furry-nonbinary.png" alt="Furry Nonbinary" />
-          <label>Furry⚧</label>
-        </div>
+  <div class="container">
+    <h1>AI Image Creator</h1>
+    <div class="choices">
+      <div class="category">
+        <div class="avatar woman"></div>
+        <span class="label woman-label">Woman</span>
       </div>
-    </section>
-
-    <!-- Prompt Entry -->
-    <section class="prompt-section">
-      <h2>Prompt</h2>
-      <input type="text" class="prompt-input" placeholder="Enter your character idea..." />
-    </section>
-
-    <!-- Trait Dropdowns -->
-    <section class="traits-section">
-      <h2>Customize Traits</h2>
-
-      <div class="dropdown-card">
-        <button class="dropdown-toggle">Hairstyles ▼</button>
-        <div class="dropdown-content">
-          <label><input type="checkbox" value="short" /> Short</label>
-          <label><input type="checkbox" value="braids" /> Braids</label>
-          <label><input type="checkbox" value="mohawk" /> Mohawk</label>
-        </div>
+      <div class="category">
+        <div class="avatar man"></div>
+        <span class="label man-label">Man</span>
       </div>
-
-      <div class="dropdown-card">
-        <button class="dropdown-toggle">Clothing ▼</button>
-        <div class="dropdown-content">
-          <label><input type="checkbox" value="jacket" /> Jacket</label>
-          <label><input type="checkbox" value="armor" /> Armor</label>
-          <label><input type="checkbox" value="robe" /> Robe</label>
-        </div>
+      <div class="category">
+        <div class="avatar nonbinary"></div>
+        <span class="label nonbinary-label">Non Binary</span>
       </div>
-
-      <!-- Add more dropdowns like accessories or species traits as needed -->
-      
-    </section>
-
+      <div class="category">
+        <div class="avatar furry-male"></div>
+        <span class="label furry-male-label">Furry Male</span>
+      </div>
+      <div class="category">
+        <div class="avatar furry-female"></div>
+        <span class="label furry-female-label">Furry Female</span>
+      </div>
+      <div class="category">
+        <div class="avatar furry-nonbinary"></div>
+        <span class="label furry-nonbinary-label">Furry Noninary</span>
+      </div>
+    </div>
+    <input type="text" placeholder="Enter a prompt..." id="prompt-box" />
+    <div class="options">
+      <button class="option-btn">Hairstyles</button>
+      <button class="option-btn">Clothing</button>
+    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
