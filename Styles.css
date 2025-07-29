@@ -1,58 +1,60 @@
-/* styles.css */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
 }
 
-.background {
-  background: linear-gradient(135deg, #e0caff, #f8eaff);
-  height: 100vh;
+.gradient-background {
+  background: linear-gradient(to bottom right, #ebe3ff, #d9cfff);
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 60px 20px;
 }
 
-.icon-container {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 40px;
-  text-align: center;
-  width: 300px;
+.title {
+  color: #4a0072;
+  font-size: 2rem;
+  margin-bottom: 40px;
 }
 
-.icon-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.5em;
-  color: #4a0082;
-}
-
-.emoji-grid {
+.selector-grid {
   display: flex;
-  justify-content: space-around;
-  gap: 15px;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.emoji-btn {
-  background-color: #f2f0ff;
+.selector-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  width: 100px;
+  height: 110px;
+  font-size: 2rem;
   border: none;
-  border-radius: 50%;
-  font-size: 2em;
-  width: 60px;
-  height: 60px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.emoji-btn:hover {
-  background-color: #d5c3ff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+.selector-card span {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #333;
 }
 
-.emoji-btn:active {
-  background-color: #bca2ff;
+.selector-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background-color: #f5f0ff;
+}
+
+.selector-card:active {
   transform: scale(0.95);
+  background-color: #e4d2ff;
 }
