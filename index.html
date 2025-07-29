@@ -1,22 +1,26 @@
-<div class="selector-grid">
-  <button class="selector-card" data-type="boy">
-    <span class="emoji">👦</span>
-    <span class="label">Boy</span>
-  </button>
-  <button class="selector-card" data-type="girl">
-    <span class="emoji">👧</span>
-    <span class="label">Girl</span>
-  </button>
-  <button class="selector-card" data-type="nonbinary">
-    <span class="emoji">⚧</span>
-    <span class="label">Non-binary</span>
-  </button>
-  <button class="selector-card" data-type="furry">
-    <span class="emoji">🦊</span>
-    <span class="label">Furry</span>
-  </button>
-  <button class="selector-card" data-type="other">
-    <span class="emoji">🎭</span>
-    <span class="label">Other</span>
-  </button>
+<!-- HTML Structure -->
+<div class="character-ui">
+  <div class="identity-icons">
+    <button class="icon-btn" data-category="woman">👩</button>
+    <button class="icon-btn" data-category="man">👨</button>
+    <button class="icon-btn" data-category="nonbinary">🧑‍🎤</button>
+    <button class="icon-btn" data-category="furry-male">🦁♂️</button>
+    <button class="icon-btn" data-category="furry-female">🦁♀️</button>
+    <button class="icon-btn" data-category="furry-nonbinary">🦁⚧</button>
+  </div>
+
+  <div class="prompt-card">
+    <input type="text" placeholder="Enter a prompt..." />
+  </div>
+
+  <div class="dropdown-card">
+    <button class="dropdown-toggle">Hairstyles ⬇</button>
+    <div class="dropdown-menu">
+      <label><input type="checkbox" /> Short Hair</label>
+      <label><input type="checkbox" /> Braids</label>
+      <label><input type="checkbox" /> Mohawk</label>
+    </div>
+  </div>
+
+  <!-- Repeat dropdown-card for other choices -->
 </div>
