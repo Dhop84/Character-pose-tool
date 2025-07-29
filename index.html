@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your App Title</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Character Creator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-container">
-    <header class="header">Your App Title</header>
 
-    <div class="card-grid">
-      <div class="card">
-        <h3>Option One</h3>
-        <select>
-          <option>Choose A</option>
-          <option>Choose B</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <h3>Option Two</h3>
-        <select>
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </select>
-      </div>
-
-      <div class="card">
-        <h3>Option Three</h3>
-        <select>
-          <option>First</option>
-          <option>Second</option>
-        </select>
-      </div>
-    </div>
-
-    <footer class="footer">© 2025 Daniel O’Sullivan</footer>
+  <div class="character-menu">
+    <div class="character-option" data-type="boy">👦 Boy</div>
+    <div class="character-option" data-type="girl">👧 Girl</div>
+    <div class="character-option" data-type="non-binary">⚧ Non-binary</div>
+    <div class="character-option" data-type="furry">🐾 Furry</div>
+    <div class="character-option" data-type="other">🎭 Other</div>
   </div>
+
+  <script>
+    document.querySelectorAll('.character-option').forEach(option => {
+      option.addEventListener('click', () => {
+        const characterType = option.getAttribute('data-type');
+        console.log("Chosen character:", characterType);
+        createCharacter(characterType);
+      });
+    });
+
+    function createCharacter(type) {
+      alert(`Creating a ${type} character...`);
+      // Add your character creation logic here!
+    }
+  </script>
+
 </body>
 </html>
