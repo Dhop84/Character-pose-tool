@@ -1,26 +1,43 @@
-<!-- HTML Structure -->
-<div class="character-ui">
-  <div class="identity-icons">
-    <button class="icon-btn" data-category="woman">👩</button>
-    <button class="icon-btn" data-category="man">👨</button>
-    <button class="icon-btn" data-category="nonbinary">🧑‍🎤</button>
-    <button class="icon-btn" data-category="furry-male">🦁♂️</button>
-    <button class="icon-btn" data-category="furry-female">🦁♀️</button>
-    <button class="icon-btn" data-category="furry-nonbinary">🦁⚧</button>
-  </div>
-
-  <div class="prompt-card">
-    <input type="text" placeholder="Enter a prompt..." />
-  </div>
-
-  <div class="dropdown-card">
-    <button class="dropdown-toggle">Hairstyles ⬇</button>
-    <div class="dropdown-menu">
-      <label><input type="checkbox" /> Short Hair</label>
-      <label><input type="checkbox" /> Braids</label>
-      <label><input type="checkbox" /> Mohawk</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Creator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="character-ui">
+    
+    <!-- Gender/Furry Selection Icons -->
+    <div class="identity-icons">
+      <button class="icon-btn" data-category="woman">👩</button>
+      <button class="icon-btn" data-category="man">👨</button>
+      <button class="icon-btn" data-category="nonbinary">🧑‍🎤</button>
+      <button class="icon-btn" data-category="furry-male">🦁♂️</button>
+      <button class="icon-btn" data-category="furry-female">🦁♀️</button>
+      <button class="icon-btn" data-category="furry-nonbinary">🦁⚧</button>
     </div>
+
+    <!-- Prompt Card -->
+    <div class="prompt-card">
+      <input type="text" placeholder="Enter a prompt..." />
+    </div>
+
+    <!-- Dropdown Cards -->
+    <div class="dropdown-card">
+      <button class="dropdown-toggle">Hairstyles ⬇</button>
+      <div class="dropdown-menu">
+        <label><input type="checkbox" /> Short Hair</label>
+        <label><input type="checkbox" /> Braids</label>
+        <label><input type="checkbox" /> Mohawk</label>
+      </div>
+    </div>
+
+    <!-- Add more dropdowns below as needed -->
+
   </div>
 
-  <!-- Repeat dropdown-card for other choices -->
-</div>
+  <!-- Linked JS file for interactivity -->
+  <script src="script.js"></script>
+</body>
+</html>
