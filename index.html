@@ -2,32 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Character Creator</title>
+  <title>Character Selector</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <div class="character-menu">
-  <div class="character-option">👦 Boy</div>
-  <div class="character-option">👧 Girl</div>
-  <div class="character-option">🐶 Dog</div>
-  <div class="character-option">🐱 Cat</div>
-  <div class="character-option">🦊 Fox</div>
-</div>
-  <script>
-    document.querySelectorAll('.character-option').forEach(option => {
-      option.addEventListener('click', () => {
-        const characterType = option.getAttribute('data-type');
-        console.log("Chosen character:", characterType);
-        createCharacter(characterType);
-      });
-    });
-
-    function createCharacter(type) {
-      alert(`Creating a ${type} character...`);
-      // Add your character creation logic here!
-    }
-  </script>
-
+  <div class="background">
+    <div class="icon-container">
+      <h2>Pick Your Character</h2>
+      <div class="emoji-grid">
+        <button class="emoji-btn">🤖</button>
+        <button class="emoji-btn">🐱</button>
+        <button class="emoji-btn">🦸</button>
+        <button class="emoji-btn">👽</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
