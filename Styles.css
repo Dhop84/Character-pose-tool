@@ -1,74 +1,117 @@
-/* CSS Styling */
-.character-ui {
-  max-width: 600px;
-  margin: auto;
-  background: linear-gradient(to bottom, #dcd7f7, #f3f1fe);
-  padding: 2rem;
-  border-radius: 1rem;
+/* Global Reset & Font */
+body {
+  margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #121212, #1e1e1e);
+  color: #fff;
 }
 
-.identity-icons {
+/* Container */
+.creator-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Section Headers */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+/* Avatar Grid */
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.avatar {
+  background: #2b2b2b;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.avatar img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.avatar:hover {
+  background: #383838;
+  transform: translateY(-4px);
+}
+
+/* Prompt Input */
+.prompt-input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #2d2d2d;
+  color: #fff;
+}
+
+/* Dropdown Cards */
+.dropdown-card {
+  background: #242424;
+  border-radius: 10px;
+  overflow: hidden;
   margin-bottom: 1rem;
 }
 
-.icon-btn {
-  background: white;
-  border: 2px solid #b6a3f2;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.icon-btn:hover {
-  transform: scale(1.1);
-  animation: pulse 0.6s ease-in-out;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0px #b6a3f2; }
-  50% { box-shadow: 0 0 12px #b6a3f2; }
-}
-
-.prompt-card input {
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 10px;
-  border: 1px solid #b6a3f2;
-  background: white;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(180, 160, 230, 0.2);
-}
-
-.dropdown-card {
-  margin-top: 1rem;
-}
-
 .dropdown-toggle {
-  background: #e5d8ff;
-  border: none;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
   width: 100%;
   text-align: left;
+  background: #333;
+  color: #fff;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.dropdown-menu {
-  background: white;
+.dropdown-toggle:hover {
+  background: #444;
+}
+
+.dropdown-content {
   padding: 1rem;
-  margin-top: 0.5rem;
   display: none;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(150, 130, 220, 0.2);
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.dropdown-card.active .dropdown-menu {
-  display: block;
+.dropdown-card.active .dropdown-content {
+  display: flex;
+}
+
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  accent-color: #4fc3f7;
 }
