@@ -1,35 +1,58 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f2f5;
+/* styles.css */
+body, html {
   margin: 0;
-  padding: 40px;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.character-menu {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  padding: 24px;
+.background {
+  background: linear-gradient(135deg, #e0caff, #f8eaff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 40px;
+  text-align: center;
+  width: 300px;
+}
+
+.icon-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #4a0082;
+}
+
+.emoji-grid {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  margin: 0 auto 40px;
-  max-width: 600px;
+  gap: 15px;
 }
 
-.character-option {
-  background-color: #f3f5f7;
+.emoji-btn {
+  background-color: #f2f0ff;
+  border: none;
   border-radius: 50%;
-  padding: 18px 22px;
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #333;
+  font-size: 2em;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  text-align: center;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.character-option:hover {
-  transform: scale(1.05);
-  background-color: #dbe0ea;
+.emoji-btn:hover {
+  background-color: #d5c3ff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.emoji-btn:active {
+  background-color: #bca2ff;
+  transform: scale(0.95);
 }
