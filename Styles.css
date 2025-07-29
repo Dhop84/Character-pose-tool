@@ -1,42 +1,74 @@
-.selector-grid {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
+/* CSS Styling */
+.character-ui {
+  max-width: 600px;
+  margin: auto;
+  background: linear-gradient(to bottom, #dcd7f7, #f3f1fe);
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.selector-card {
-  background-color: #ffffff;
-  border: none;
+.identity-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.icon-btn {
+  background: white;
+  border: 2px solid #b6a3f2;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition: transform 0.3s;
 }
 
-.selector-card:hover {
-  transform: scale(1.08);
-  background-color: #f3edff;
+.icon-btn:hover {
+  transform: scale(1.1);
+  animation: pulse 0.6s ease-in-out;
 }
 
-.selector-card:active {
-  transform: scale(0.95);
-  background-color: #e0d3ff;
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0px #b6a3f2; }
+  50% { box-shadow: 0 0 12px #b6a3f2; }
 }
 
-.emoji {
-  font-size: 3rem;
+.prompt-card input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #b6a3f2;
+  background: white;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(180, 160, 230, 0.2);
 }
 
-.label {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: #333;
+.dropdown-card {
+  margin-top: 1rem;
+}
+
+.dropdown-toggle {
+  background: #e5d8ff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-menu {
+  background: white;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(150, 130, 220, 0.2);
+}
+
+.dropdown-card.active .dropdown-menu {
+  display: block;
 }
