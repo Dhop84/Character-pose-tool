@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Character Selector</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="gradient-background">
-    <h1 class="title">Choose Your Character Type</h1>
-    <div class="selector-grid">
-      <button class="selector-card" data-type="boy">👦<span>Boy</span></button>
-      <button class="selector-card" data-type="girl">👧<span>Girl</span></button>
-      <button class="selector-card" data-type="nonbinary">⚧<span>Non-binary</span></button>
-      <button class="selector-card" data-type="furry">🦊<span>Furry</span></button>
-      <button class="selector-card" data-type="other">🎭<span>Other</span></button>
-    </div>
-  </div>
-
-  <script>
-    document.querySelectorAll('.selector-card').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const type = btn.getAttribute('data-type');
-        alert(`Creating a ${type} character...`);
-        // Extend this with more logic or modal launch if needed
-      });
-    });
-  </script>
-</body>
-</html>
+<div class="selector-grid">
+  <button class="selector-card" data-type="boy">
+    <span class="emoji">👦</span>
+    <span class="label">Boy</span>
+  </button>
+  <button class="selector-card" data-type="girl">
+    <span class="emoji">👧</span>
+    <span class="label">Girl</span>
+  </button>
+  <button class="selector-card" data-type="nonbinary">
+    <span class="emoji">⚧</span>
+    <span class="label">Non-binary</span>
+  </button>
+  <button class="selector-card" data-type="furry">
+    <span class="emoji">🦊</span>
+    <span class="label">Furry</span>
+  </button>
+  <button class="selector-card" data-type="other">
+    <span class="emoji">🎭</span>
+    <span class="label">Other</span>
+  </button>
+</div>
