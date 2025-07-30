@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-https://youtu.be/nb_fFj_0rq8?si=pdrMIy3VcLvKxdXH
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Image Creator</title>
+  <style>
     body {
       min-height: 100vh;
       background: linear-gradient(135deg, #f0d6ff 0%, #a58cff 100%);
@@ -11,9 +14,9 @@ https://youtu.be/nb_fFj_0rq8?si=pdrMIy3VcLvKxdXH
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 100vw;
-      min-height: 100vh;
+      overflow-x: hidden;
     }
+
     .main-layout {
       width: 100vw;
       height: 100vh;
@@ -21,36 +24,43 @@ https://youtu.be/nb_fFj_0rq8?si=pdrMIy3VcLvKxdXH
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2.5vw;
-      padding: 3vw 0;
+      gap: 1vw;
+      padding: 1vw 0;
       box-sizing: border-box;
     }
+
     .card {
       background: #fff;
       border-radius: 24px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
-      width: 90vw;
-      max-width: 600px;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.07);
+      width: 98vw;
+      max-width: 100vw;
       min-width: 300px;
-      padding: 2vw 2vw;
+      padding: 4vw 1vw;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .title-card {
       padding-bottom: 0.8vw;
-      margin-bottom: 0;
     }
+
+    .title-card h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
     .character-grid {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-      gap: 18px;
-      margin-bottom: 0;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
     }
+
     .char-btn {
-      width: 96px;
-      height: 96px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       border: none;
       font-weight: bold;
@@ -59,73 +69,83 @@ https://youtu.be/nb_fFj_0rq8?si=pdrMIy3VcLvKxdXH
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 1.12em;
-      box-shadow: 0px 4px 15px rgba(140,120,200,0.04);
-      margin: 0 auto;
+      font-size: 1.8em;
+      box-shadow: 0px 4px 15px rgba(140, 120, 200, 0.04);
       padding: 0;
     }
+
+    .char-label {
+      margin-top: 8px;
+      font-size: 0.65em;
+      text-align: center;
+    }
+
     .woman { background: #ffe381; color: #57390b; }
     .man { background: #b5e5f7; color: #194d71; }
     .nonbinary { background: #ffd8a3; color: #954d00; }
-    .furry-male { background: #adc8fb; color: #25285c;}
-    .furry-female { background: #ffe1db; color: #840000;}
-    .furry-nonbinary { background: #d1b4f7; color: #46306d;}
-    .char-label { margin-top: 8px; font-size: 0.9em; text-align: center;}
+    .furry-male { background: #adc8fb; color: #25285c; }
+    .furry-female { background: #ffe1db; color: #840000; }
+    .furry-nonbinary { background: #d1b4f7; color: #46306d; }
+
     .prompt-input {
       width: 100%;
-      margin: 10px 0;
-      padding: 18px 13px;
-      border-radius: 12px;
+      margin: 14px 0;
+      padding: 28px 24px;
+      border-radius: 14px;
       border: 1px solid #ccc;
-      font-size: 1.1em;
+      font-size: 1.5em;
       background: #f9f7ff;
     }
+
     .options {
       width: 100%;
       display: flex;
-      gap: 16px;
-      margin-top: 10px;
+      gap: 28px;
+      margin-top: 14px;
       justify-content: space-around;
     }
+
     .big-btn {
       flex: 1 1 0;
-      padding: 20px 0;
-      border-radius: 16px;
+      padding: 36px 0;
+      border-radius: 18px;
       border: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.18em;
+      font-size: 1.7em;
       font-weight: bold;
       cursor: pointer;
       background: #ebe8ff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09);
       transition: background-color 0.3s;
-      margin: 0;
     }
+
     .big-btn:hover {
       background: #dad6f7;
     }
+
     .big-btn span.icon {
-      margin-right: 16px;
-      font-size: 1.8em;
+      margin-right: 20px;
+      font-size: 2.2em;
     }
+
     @media (max-width: 700px) {
-      .main-layout {
-        gap: 4vw;
-      }
       .card {
-        padding: 8vw 3vw;
+        padding: 8vw 4vw;
         width: 97vw;
         max-width: 97vw;
       }
+
       .character-grid {
-        gap: 13px;
+        gap: 16px;
       }
+
       .options {
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
       }
+
       .big-btn {
         width: 100%;
       }
@@ -135,25 +155,44 @@ https://youtu.be/nb_fFj_0rq8?si=pdrMIy3VcLvKxdXH
 <body>
   <div class="main-layout">
     <div class="card title-card">
-      <h1 style="margin:0;text-align:center;">AI Image Creator</h1>
+      <h1>AI Image Creator</h1>
     </div>
+
     <div class="card">
       <div class="character-grid">
-        <button class="char-btn woman"><span>👩‍🦰</span><span class="char-label">Woman</span></button>
-        <button class="char-btn man"><span>👨🏽‍🦱</span><span class="char-label">Man</span></button>
-        <button class="char-btn nonbinary"><span>👤</span><span class="char-label">Non Binary</span></button>
-        <button class="char-btn furry-male"><span>🐺</span><span class="char-label">Furry Male</span></button>
-        <button class="char-btn furry-female"><span>🐰</span><span class="char-label">Furry Female</span></button>
-        <button class="char-btn furry-nonbinary"><span>🦊</span><span class="char-label">Furry Nonbinary</span></button>
+        <button class="char-btn woman">
+          👩‍🦰<span class="char-label">Woman</span>
+        </button>
+        <button class="char-btn man">
+          👨🏽‍🦱<span class="char-label">Man</span>
+        </button>
+        <button class="char-btn nonbinary">
+          👤<span class="char-label">Non Binary</span>
+        </button>
+        <button class="char-btn furry-male">
+          🐺<span class="char-label">Furry Male</span>
+        </button>
+        <button class="char-btn furry-female">
+          🐰<span class="char-label">Furry Female</span>
+        </button>
+        <button class="char-btn furry-nonbinary">
+          🦊<span class="char-label">Furry Nonbinary</span>
+        </button>
       </div>
     </div>
+
     <div class="card">
       <input class="prompt-input" type="text" placeholder="Enter a prompt..." />
     </div>
+
     <div class="card">
       <div class="options">
-        <button class="big-btn"><span class="icon">💇</span>Hairstyles</button>
-        <button class="big-btn"><span class="icon">👕</span>Clothing</button>
+        <button class="big-btn">
+          <span class="icon">💇</span>Hairstyles
+        </button>
+        <button class="big-btn">
+          <span class="icon">👕</span>Clothing
+        </button>
       </div>
     </div>
   </div>
