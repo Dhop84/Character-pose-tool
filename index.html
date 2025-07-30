@@ -3,43 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <title>AI Image Creator</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #f0d6ff 0%, #a58cff 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 24px;
+      width: 90vw;
+      max-width: 600px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .character-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .char-btn {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: none;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1em;
+      padding: 0;
+    }
+    .woman { background: #ffe381; color: #57390b; }
+    .man { background: #b5e5f7; color: #194d71; }
+    .nonbinary { background: #ffd8a3; color: #954d00; }
+    .furry-male { background: #adc8fb; color: #25285c;}
+    .furry-female { background: #ffe1db; color: #840000;}
+    .furry-nonbinary { background: #d1b4f7; color: #46306d;}
+    .char-label { margin-top: 8px; font-size: 0.9em; text-align: center;}
+    .prompt-input {
+      width: 100%;
+      margin: 14px 0 18px 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #ccc;
+      font-size: 1.1em;
+    }
+    .big-btn {
+      width: 100%;
+      padding: 18px;
+      margin: 10px 0 0 0;
+      border-radius: 16px;
+      border: none;
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #ebe8ff;
+      transition: background-color 0.3s ease;
+    }
+    .big-btn:hover {
+      background-color: #d9d5ff;
+    }
+    .big-btn span.icon {
+      margin-right: 16px;
+      font-size: 1.8em;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>AI Image Creator</h1>
-    <div class="choices">
-      <div class="category">
-        <div class="avatar woman"></div>
-        <span class="label woman-label">Woman</span>
-      </div>
-      <div class="category">
-        <div class="avatar man"></div>
-        <span class="label man-label">Man</span>
-      </div>
-      <div class="category">
-        <div class="avatar nonbinary"></div>
-        <span class="label nonbinary-label">Non Binary</span>
-      </div>
-      <div class="category">
-        <div class="avatar furry-male"></div>
-        <span class="label furry-male-label">Furry Male</span>
-      </div>
-      <div class="category">
-        <div class="avatar furry-female"></div>
-        <span class="label furry-female-label">Furry Female</span>
-      </div>
-      <div class="category">
-        <div class="avatar furry-nonbinary"></div>
-        <span class="label furry-nonbinary-label">Furry Noninary</span>
-      </div>
+    <div class="character-grid">
+      <button class="char-btn woman"><span>👩‍🦰</span><span class="char-label">Woman</span></button>
+      <button class="char-btn man"><span>👨🏽‍🦱</span><span class="char-label">Man</span></button>
+      <button class="char-btn nonbinary"><span>👤</span><span class="char-label">Non Binary</span></button>
+      <button class="char-btn furry-male"><span>🐺</span><span class="char-label">Furry Male</span></button>
+      <button class="char-btn furry-female"><span>🐰</span><span class="char-label">Furry Female</span></button>
+      <button class="char-btn furry-nonbinary"><span>🦊</span><span class="char-label">Furry Nonbinary</span></button>
     </div>
-    <input type="text" placeholder="Enter a prompt..." id="prompt-box" />
-    <div class="options">
-      <button class="option-btn">Hairstyles</button>
-      <button class="option-btn">Clothing</button>
-    </div>
+    <input class="prompt-input" type="text" placeholder="Enter a prompt..." />
+    <button class="big-btn"><span class="icon">💇</span>Hairstyles</button>
+    <button class="big-btn"><span class="icon">👕</span>Clothing</button>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
